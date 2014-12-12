@@ -57,7 +57,7 @@ public class DescripTetris extends JFrame{
 		frame.getContentPane().setLayout(null);
 		frame.setSize(500,300);
 		
-		JLabel lblDescripcionAngryBull = new JLabel("Descripcion Angry Bull");
+		JLabel lblDescripcionAngryBull = new JLabel("Descripcion Tetris");
 		lblDescripcionAngryBull.setFont(new Font("Tahoma", Font.PLAIN, 15));
 		lblDescripcionAngryBull.setHorizontalAlignment(SwingConstants.CENTER);
 		lblDescripcionAngryBull.setBounds(124, 11, 176, 28);

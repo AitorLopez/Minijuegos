@@ -74,7 +74,7 @@ public class EligeMinijuego extends JFrame{
 		btnPepeFly.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				System.out.println("Abrir menú Pepe Fly");
-				OpcionesTetris a=new OpcionesTetris();
+				OpcionesPepeFly a=new OpcionesPepeFly();
 				a.frame.setVisible(true);
 			}
 		});

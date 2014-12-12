@@ -24,7 +24,7 @@ import clases.UsuariosBD;
 
 //donde llamo a añadirUsaurioABD(), try-catch del main()??
 public class EntraORegistrate extends JFrame{
-
+  public static Usuario usu;
 	JFrame frame;
 	private JTextField textFieldNick;
 	private JTextField textFieldContraseña;
@@ -64,9 +64,9 @@ public class EntraORegistrate extends JFrame{
 		frame.getContentPane().setLayout(null);
 		
 		JLabel lblMinijuegos = new JLabel("Minijuegos");
-		lblMinijuegos.setForeground(Color.RED);
-		lblMinijuegos.setFont(new Font("Sitka Small", Font.PLAIN, 44));
-		lblMinijuegos.setBounds(90, 23, 247, 45);
+		lblMinijuegos.setForeground(Color.DARK_GRAY);
+		lblMinijuegos.setFont(new Font("Showcard Gothic", Font.PLAIN, 44));
+		lblMinijuegos.setBounds(90, 22, 284, 48);
 		frame.getContentPane().add(lblMinijuegos);
 		
 		JLabel lblEntar = new JLabel("Entrar:");
@@ -94,18 +94,6 @@ public class EntraORegistrate extends JFrame{
 		lblContraseña.setBounds(26, 173, 77, 14);
 		frame.getContentPane().add(lblContraseña);
 		
-		JButton btnRegistrarse = new JButton("Registrarse");
-		btnRegistrarse.setBounds(277, 227, 107, 23);
-		frame.getContentPane().add(btnRegistrarse);
-		btnRegistrarse.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {
-				System.out.println("Inicio de registro");
-				//Entrar a menú de Nuevo Usuario
-				Registro a=new Registro();
-				a.frame.setVisible(true);
-			}
-		});
-		
 		JButton btnEntrar = new JButton("Entrar");
 		btnEntrar.setBounds(315, 151, 89, 23);
 		frame.getContentPane().add(btnEntrar);
@@ -113,7 +101,7 @@ public class EntraORegistrate extends JFrame{
 			public void actionPerformed(ActionEvent arg0) {
 				System.out.println("Inicio del programa");
 				//primero busco a ver si está el usuario registrado
-				Usuario usu = UsuariosBD.buscarUsuariosBD(textFieldNick.getText(), textFieldContraseña.getText()); 
+				 usu = UsuariosBD.buscarUsuariosBD(textFieldNick.getText(), textFieldContraseña.getText()); 
 				if(usu!=null){
 					EligeMinijuego a=new EligeMinijuego();
 					a.frame.setVisible(true);
@@ -126,5 +114,17 @@ public class EntraORegistrate extends JFrame{
 				}
 		}
 	});
+		
+		JButton btnRegistrarse = new JButton("Registrarse");
+		btnRegistrarse.setBounds(277, 227, 107, 23);
+		frame.getContentPane().add(btnRegistrarse);
+		btnRegistrarse.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				System.out.println("Inicio de registro");
+				//Entrar a menú de Nuevo Usuario
+				Registro a=new Registro();
+				a.frame.setVisible(true);
+			}
+		});
 }
 }

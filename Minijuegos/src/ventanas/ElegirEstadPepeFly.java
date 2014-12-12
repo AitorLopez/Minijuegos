@@ -10,6 +10,8 @@ import javax.swing.JRadioButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import java.awt.Color;
+import javax.swing.SwingConstants;
+import java.awt.Font;
 
 public class ElegirEstadPepeFly {
 
@@ -67,7 +69,8 @@ public class ElegirEstadPepeFly {
 		rdbtnMundial.setBackground(Color.CYAN);
 		rdbtnMundial.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				
+				EstadiMundialPepeFly a= new EstadiMundialPepeFly();
+				a.frame.setVisible(true);
 			}
 		});
 		rdbtnMundial.setBounds(40, 147, 109, 23);
@@ -76,6 +79,12 @@ public class ElegirEstadPepeFly {
 		JButton btnAtras = new JButton("Atras");
 		btnAtras.setBounds(170, 227, 89, 23);
 		frame.getContentPane().add(btnAtras);
+		
+		JLabel lblPepeFly = new JLabel("PEPE FLY");
+		lblPepeFly.setFont(new Font("Source Sans Pro Black", Font.PLAIN, 15));
+		lblPepeFly.setHorizontalAlignment(SwingConstants.CENTER);
+		lblPepeFly.setBounds(170, 11, 110, 14);
+		frame.getContentPane().add(lblPepeFly);
 		btnAtras.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				System.out.println("Salir");

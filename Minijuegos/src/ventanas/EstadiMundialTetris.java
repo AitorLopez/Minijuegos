@@ -52,10 +52,10 @@ public class EstadiMundialTetris {
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
 		
-		JLabel lblRankingMundial = new JLabel("TOP 10 MUNDIAL");
+		JLabel lblRankingMundial = new JLabel("TOP 10 MUNDIAL TETRIS");
 		lblRankingMundial.setFont(new Font("Stencil", Font.PLAIN, 18));
 		lblRankingMundial.setHorizontalAlignment(SwingConstants.CENTER);
-		lblRankingMundial.setBounds(64, 28, 294, 29);
+		lblRankingMundial.setBounds(64, 28, 313, 29);
 		frame.getContentPane().add(lblRankingMundial);
 		
 		JButton btnAtras = new JButton("Atras");

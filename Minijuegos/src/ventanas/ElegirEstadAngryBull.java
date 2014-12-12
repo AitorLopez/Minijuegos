@@ -10,6 +10,8 @@ import javax.swing.JRadioButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import java.awt.Color;
+import javax.swing.SwingConstants;
+import java.awt.Font;
 
 public class ElegirEstadAngryBull {
 
@@ -67,7 +69,8 @@ public class ElegirEstadAngryBull {
 		rdbtnMundial.setBackground(Color.CYAN);
 		rdbtnMundial.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				
+				EstadiMundialAngryBull a= new EstadiMundialAngryBull();
+				a.frame.setVisible(true);
 			}
 		});
 		rdbtnMundial.setBounds(40, 147, 109, 23);
@@ -76,6 +79,12 @@ public class ElegirEstadAngryBull {
 		JButton btnAtras = new JButton("Atras");
 		btnAtras.setBounds(170, 227, 89, 23);
 		frame.getContentPane().add(btnAtras);
+		
+		JLabel lblAngryBull = new JLabel("AngryBull");
+		lblAngryBull.setFont(new Font("Source Sans Pro Black", Font.PLAIN, 15));
+		lblAngryBull.setHorizontalAlignment(SwingConstants.CENTER);
+		lblAngryBull.setBounds(134, 16, 153, 14);
+		frame.getContentPane().add(lblAngryBull);
 		btnAtras.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				System.out.println("Salir");

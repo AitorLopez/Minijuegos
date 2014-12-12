@@ -58,7 +58,6 @@ public class UsuariosBD {
 		ResultSet rs;
 		String sql = null;
 		try {
-			//SELECT MAX(PUNTUACION) FROM PARTIDA WHERE IDJ=1;
 			sql = "select max(Puntuacion) from PARTIDA where IDJ = '"+idj+"'";
 			rs = stat.executeQuery(sql);
 			rs.close();
@@ -72,24 +71,49 @@ public class UsuariosBD {
 		return sql;
 	}
 	
-	public static String recordPersonalJuego(int idj, String nick){
+	public static int recordPersonalJuego(int idj, String nick){
 		Usuario u=null;
 		Statement stat = BaseDeDatos.getStatement();
 		System.out.println(stat);
 		ResultSet rs;
+		int record=0;
 		String sql = null;
 		try {
-			//SELECT MAX(PUNTUACION) FROM PARTIDA WHERE IDJ=1;
 			sql = "select max(Puntuacion) from PARTIDA where IDJ = '"+idj+"' and nick='"+nick+"'";
 			rs = stat.executeQuery(sql);
+			record=rs.getInt(1);
+			System.out.println(record);
 			rs.close();
 			stat.close();
 		
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
-			System.out.println("ERROR recordMundialPartida: "+sql);
-			System.out.println("ERROR recordMundialPartida: "+e.getMessage());
+			System.out.println("ERROR recordPersonalJuego: "+sql);
+			System.out.println("ERROR recordPersonalJuego: "+e.getMessage());
 		}
-		return sql;
+		return record;
+	}
+	
+	public static String ultimaFechaUsuarioJuega(int idj, String nick){
+		Usuario u=null;
+		Statement stat = BaseDeDatos.getStatement();
+		System.out.println(stat);
+		ResultSet rs;
+		String fecha=null;
+		String sql = null;
+		try {
+			sql = "select min(fecha) from PARTIDA where IDJ = '"+idj+"' and nick='"+nick+"'";
+			rs = stat.executeQuery(sql);
+			fecha=rs.getString(1);
+			System.out.println(fecha);
+			rs.close();
+			stat.close();
+		
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			System.out.println("ERROR ultimaFechaUsuarioJuega: "+sql);
+			System.out.println("ERROR ultimaFechaUsuarioJuega: "+e.getMessage());
+		}
+		return fecha;
 	}
 }

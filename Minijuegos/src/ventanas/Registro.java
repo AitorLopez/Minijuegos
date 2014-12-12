@@ -70,9 +70,9 @@ public class Registro extends JFrame{
 		frame.getContentPane().setLayout(null);
 		
 		JLabel lblNuevoUsuario = new JLabel("Nuevo usuario");
-		lblNuevoUsuario.setForeground(Color.RED);
+		lblNuevoUsuario.setForeground(Color.DARK_GRAY);
 		lblNuevoUsuario.setHorizontalAlignment(SwingConstants.CENTER);
-		lblNuevoUsuario.setFont(new Font("Tahoma", Font.PLAIN, 17));
+		lblNuevoUsuario.setFont(new Font("Source Sans Pro Semibold", Font.PLAIN, 19));
 		lblNuevoUsuario.setBounds(116, 11, 184, 29);
 		frame.getContentPane().add(lblNuevoUsuario);
 		

@@ -8,11 +8,13 @@ import javax.swing.JLabel;
 import javax.swing.SwingConstants;
 
 import clases.Usuario;
+import clases.UsuariosBD;
 
 import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.Color;
+
 import javax.swing.JTextField;
 
 public class EstadiJugadorTetris {
@@ -53,41 +55,48 @@ public class EstadiJugadorTetris {
 		frame.getContentPane().add(lblEstadisticaUsuario);
 		
 		JLabel lblRecordUsuario = new JLabel("Record usuario:");
-		lblRecordUsuario.setBounds(28, 85, 94, 14);
+		lblRecordUsuario.setBounds(20, 85, 94, 14);
 		frame.getContentPane().add(lblRecordUsuario);
 		
 		JButton btnAtras = new JButton("Atras");
 		btnAtras.setBounds(170, 227, 89, 23);
 		frame.getContentPane().add(btnAtras);
 		
-		/*JLabel lblRecord = new JLabel(recordPersonalJuego(1,Usuario.nick));
-		lblRecord.setBounds(216, 85, 46, 14);
-		frame.getContentPane().add(lblRecord);*/
+		JLabel lblRecord = new JLabel(""+UsuariosBD.recordPersonalJuego(1,EntraORegistrate.usu.getNick()));
+		lblRecord.setBounds(236, 85, 121, 14);
+		frame.getContentPane().add(lblRecord);
+		
+		JLabel lblNewLabel = new JLabel(""+UsuariosBD.ultimaFechaUsuarioJuega(1,EntraORegistrate.usu.getNick()));
+		lblNewLabel.setBounds(228, 179, 165, 14);
+		frame.getContentPane().add(lblNewLabel);
 		
 		JLabel lblFecha = new JLabel("Fecha de la \u00FAltima partida jugada:");
-		lblFecha.setBounds(27, 120, 198, 14);
+		lblFecha.setBounds(20, 179, 198, 14);
 		frame.getContentPane().add(lblFecha);
 		
 		JLabel lblVisualizaFecha = new JLabel("");
 		lblVisualizaFecha.setBounds(301, 120, 46, 14);
 		frame.getContentPane().add(lblVisualizaFecha);
 		
-		JLabel lblCompararRecordCon = new JLabel("Comparar record con otro usuario");
-		lblCompararRecordCon.setBounds(28, 160, 181, 14);
+		JLabel lblCompararRecordCon = new JLabel("Comparar record con otro usuario:");
+		lblCompararRecordCon.setBounds(20, 120, 226, 14);
 		frame.getContentPane().add(lblCompararRecordCon);
 		
 		textField = new JTextField();
-		textField.setBounds(236, 157, 86, 20);
+		textField.setBounds(196, 137, 121, 20);
 		frame.getContentPane().add(textField);
 		textField.setColumns(10);
 		
 		JButton btnCompararGrafico = new JButton("Comparar");
 		btnCompararGrafico.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
+				ComparaRecordsTetris a= new ComparaRecordsTetris();
+				a.frame.setVisible(true);
 			}
 		});
-		btnCompararGrafico.setBounds(335, 156, 89, 23);
+		btnCompararGrafico.setBounds(324, 136, 100, 23);
 		frame.getContentPane().add(btnCompararGrafico);
+		
 		btnAtras.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				System.out.println("Salir");

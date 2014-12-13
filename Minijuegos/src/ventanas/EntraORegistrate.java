@@ -22,7 +22,7 @@ import clases.BaseDeDatos;
 import clases.Usuario;
 import clases.UsuariosBD;
 
-//donde llamo a añadirUsaurioABD(), try-catch del main()??
+//clase principal
 public class EntraORegistrate extends JFrame{
   public static Usuario usu;
 	JFrame frame;

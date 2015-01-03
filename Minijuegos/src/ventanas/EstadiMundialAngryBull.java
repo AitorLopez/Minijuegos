@@ -104,6 +104,11 @@ public class EstadiMundialAngryBull{
 		lblTop10.setBounds(86, 192, 18, 14);
 		frame.getContentPane().add(lblTop10);
 		
+		JLabel lblNickTopTen = new JLabel(""+UsuariosBD.topTenIndividualNick(3));
+		lblNickTopTen.setHorizontalAlignment(SwingConstants.CENTER);
+		lblNickTopTen.setBounds(290, 68, 104, 134);
+		frame.getContentPane().add(lblNickTopTen);
+		
 		JButton btnAtras = new JButton("Atras");
 		btnAtras.setBounds(170, 227, 89, 23);
 		frame.getContentPane().add(btnAtras);

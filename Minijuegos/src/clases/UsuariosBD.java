@@ -159,8 +159,8 @@ public class UsuariosBD {
 		
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
-			System.out.println("ERROR topTenJuegoNick: "+sql);
-			System.out.println("ERROR topTenJuegoNick: "+e.getMessage());
+			System.out.println("ERROR topTenJuegoPuntuacion: "+sql);
+			System.out.println("ERROR topTenJuegoPuntuacion: "+e.getMessage());
 		}
 		return scores;
 	}
@@ -182,8 +182,8 @@ public class UsuariosBD {
 		
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
-			System.out.println("ERROR topTenJuegoNick: "+sql);
-			System.out.println("ERROR topTenJuegoNick: "+e.getMessage());
+			System.out.println("ERROR JuegoMasUtilizado: "+sql);
+			System.out.println("ERROR JuegoMasUtilizado: "+e.getMessage());
 		}
 		return scores;
 	}
@@ -206,8 +206,8 @@ public class UsuariosBD {
 		
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
-			System.out.println("ERROR topTenJuegoNick: "+sql);
-			System.out.println("ERROR topTenJuegoNick: "+e.getMessage());
+			System.out.println("ERROR topTenGeneralPuntuacion: "+sql);
+			System.out.println("ERROR topTenGeneralPuntuacion: "+e.getMessage());
 		}
 		return score;
 	}
@@ -231,8 +231,32 @@ public class UsuariosBD {
 		
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
-			System.out.println("ERROR topTenJuegoNick: "+sql);
-			System.out.println("ERROR topTenJuegoNick: "+e.getMessage());
+			System.out.println("ERROR topTenGeneralNick: "+sql);
+			System.out.println("ERROR topTenGeneralNick: "+e.getMessage());
+		}
+		return nick;
+	}
+	/*SELECT  Nick FROM PARTIDA where idj=1
+	order by Puntuacion desc limit 10;*/
+	public static String topTenIndividualNick(int idj){
+		Usuario u=null;
+		Statement stat = BaseDeDatos.getStatement();
+		System.out.println(stat);
+		ResultSet rs;
+		String nick=null;
+		String sql = null;
+		try {
+			sql = "select Nick from PARTIDA where idj='"+idj+"'order by PUNTUACION desc limit 10";
+			rs = stat.executeQuery(sql);
+			nick=rs.getString(1);
+			System.out.println(nick);
+			rs.close();
+			stat.close();
+		
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			System.out.println("ERROR topTenIndividualNick: "+sql);
+			System.out.println("ERROR topTenIndividualNick: "+e.getMessage());
 		}
 		return nick;
 	}

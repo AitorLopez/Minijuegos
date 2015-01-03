@@ -52,11 +52,57 @@ public class EstadiMundialPepeFly{
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
 		
-		JLabel lblRankingMundial = new JLabel("TOP 10 MUNDIAL PEPE FLY");
+		JLabel lblRankingMundial = new JLabel("TOP 5 MUNDIAL PEPE FLY");
 		lblRankingMundial.setFont(new Font("Stencil", Font.PLAIN, 18));
 		lblRankingMundial.setHorizontalAlignment(SwingConstants.CENTER);
 		lblRankingMundial.setBounds(64, 28, 313, 29);
 		frame.getContentPane().add(lblRankingMundial);
+		
+		JLabel lblTop1 = new JLabel("1.");
+		lblTop1.setBounds(86, 68, 18, 14);
+		frame.getContentPane().add(lblTop1);
+		
+		JLabel lblTop2 = new JLabel("2.");
+		lblTop2.setBounds(86, 82, 18, 14);
+		frame.getContentPane().add(lblTop2);
+		
+		JLabel lblTop3 = new JLabel("3.");
+		lblTop3.setBounds(86, 102, 18, 14);
+		frame.getContentPane().add(lblTop3);
+		
+		JLabel lblTop4 = new JLabel("4.");
+		lblTop4.setBounds(86, 117, 18, 14);
+		frame.getContentPane().add(lblTop4);
+		
+		JLabel lblTop5 = new JLabel("5.");
+		lblTop5.setBounds(86, 127, 18, 14);
+		frame.getContentPane().add(lblTop5);
+		
+		JLabel lblScoresTopTen = new JLabel(""+UsuariosBD.topTenJuegoPuntuacion(2));
+		lblScoresTopTen.setHorizontalAlignment(SwingConstants.CENTER);
+		lblScoresTopTen.setBounds(139, 68, 89, 134);
+		frame.getContentPane().add(lblScoresTopTen);
+		
+		JLabel lblTop6 = new JLabel("6.");
+		lblTop6.setHorizontalAlignment(SwingConstants.LEFT);
+		lblTop6.setBounds(86, 142, 18, 14);
+		frame.getContentPane().add(lblTop6);
+		
+		JLabel lblTop7 = new JLabel("7.");
+		lblTop7.setBounds(86, 152, 18, 14);
+		frame.getContentPane().add(lblTop7);
+		
+		JLabel lblTop8 = new JLabel("8.");
+		lblTop8.setBounds(86, 167, 18, 14);
+		frame.getContentPane().add(lblTop8);
+		
+		JLabel lblTop9 = new JLabel("9.");
+		lblTop9.setBounds(86, 177, 18, 14);
+		frame.getContentPane().add(lblTop9);
+		
+		JLabel lblTop10 = new JLabel("10.");
+		lblTop10.setBounds(86, 192, 18, 14);
+		frame.getContentPane().add(lblTop10);
 		
 		JButton btnAtras = new JButton("Atras");
 		btnAtras.setBounds(170, 227, 89, 23);
@@ -68,11 +114,6 @@ public class EstadiMundialPepeFly{
 				a.frame.setVisible(true);
 			}
 		});
-		
-		/*JLabel lblRecord = new JLabel(UsuariosBD.recordMundialPartida(1));
-		lblRecord.setBackground(new Color(0, 255, 0));
-		lblRecord.setBounds(165, 85, 179, 14);
-		frame.getContentPane().add(lblRecord);*/
 		
 	}
 }

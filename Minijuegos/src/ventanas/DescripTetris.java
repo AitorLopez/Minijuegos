@@ -74,7 +74,8 @@ public class DescripTetris extends JFrame{
 		textArea.setFont(new Font("Modern No. 20", Font.PLAIN, 13));
 		textArea.setBounds(31, 58, 404, 161);
 		frame.getContentPane().add(textArea);
-		textArea.setText("Versión del mítico tetris, haciendo referencia al tema principal de la aplicación.");
+		textArea.setText("Agrupa bloques para crear filas completas de piezas y así con seguirás mayor puntuación."
+				+ " Las imágenes de las piezas están relacionadas con el Angry Bull y el Pepe Fly.");
 		
 		JButton btnAtras = new JButton("Atras");
 		btnAtras.setBounds(170, 227, 89, 23);

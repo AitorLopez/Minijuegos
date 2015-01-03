@@ -51,17 +51,14 @@ public class EligeMinijuego extends JFrame{
 		JLabel lblEligeMinijuego = new JLabel("Elige minijuego");
 		lblEligeMinijuego.setFont(new Font("Matura MT Script Capitals", Font.PLAIN, 17));
 		lblEligeMinijuego.setHorizontalAlignment(SwingConstants.CENTER);
-		lblEligeMinijuego.setBounds(86, 11, 262, 42);
+		lblEligeMinijuego.setBounds(79, 11, 262, 42);
 		frame.getContentPane().add(lblEligeMinijuego);
 		
 		JButton btnAngryBull = new JButton("Angry Bull");
-		btnAngryBull.setBounds(158, 64, 119, 23);
+		btnAngryBull.setBounds(146, 64, 135, 23);
 		frame.getContentPane().add(btnAngryBull);
 		btnAngryBull.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				/*Falta por poner error por JTextField vacio
-				 * Introducir nuevo usuario en la BD
-				 */
 				System.out.println("Abrir menú Angry Bull");
 				OpcionesAngryBull a=new OpcionesAngryBull();
 				a.frame.setVisible(true);
@@ -69,7 +66,7 @@ public class EligeMinijuego extends JFrame{
 		});
 		
 		JButton btnPepeFly = new JButton("Pepe Fly");
-		btnPepeFly.setBounds(158, 98, 119, 23);
+		btnPepeFly.setBounds(146, 102, 135, 23);
 		frame.getContentPane().add(btnPepeFly);
 		btnPepeFly.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
@@ -80,7 +77,7 @@ public class EligeMinijuego extends JFrame{
 		});
 		
 		JButton btnTetris = new JButton("Tetris");
-		btnTetris.setBounds(158, 136, 119, 23);
+		btnTetris.setBounds(146, 140, 135, 23);
 		frame.getContentPane().add(btnTetris);
 		btnTetris.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
@@ -100,7 +97,17 @@ public class EligeMinijuego extends JFrame{
 				a.frame.setVisible(true);
 			}
 		});
+		
+		JButton btnEstadGenerales = new JButton("Estad. Generales");
+		btnEstadGenerales.setBounds(146, 179, 135, 23);
+		frame.getContentPane().add(btnEstadGenerales);
+		btnEstadGenerales.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				System.out.println("Salir");
+				EstadiGeneral a=new EstadiGeneral();
+				a.frame.setVisible(true);
+			}
+		});
 
 	}
-
 }

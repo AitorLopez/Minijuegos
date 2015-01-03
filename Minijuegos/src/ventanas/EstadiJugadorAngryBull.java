@@ -63,6 +63,7 @@ public class EstadiJugadorAngryBull {
 		frame.getContentPane().add(btnAtras);
 		
 		JLabel lblRecord = new JLabel(""+UsuariosBD.recordPersonalJuego(3,EntraORegistrate.usu.getNick()));
+		lblRecord.setHorizontalAlignment(SwingConstants.CENTER);
 		lblRecord.setBounds(236, 85, 121, 14);
 		frame.getContentPane().add(lblRecord);
 		

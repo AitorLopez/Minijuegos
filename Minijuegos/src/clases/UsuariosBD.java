@@ -116,4 +116,124 @@ public class UsuariosBD {
 		}
 		return fecha;
 	}
+	
+	/*SELECT Nick, Puntuacion FROM PARTIDA where idj=1
+	order by Puntuacion desc limit 10;*/
+	public static String topTenJuegoNick(int idj){
+		Usuario u=null;
+		Statement stat = BaseDeDatos.getStatement();
+		System.out.println(stat);
+		ResultSet rs;
+		String nicks=null;
+		String sql = null;
+		try {
+			sql = "select Nick from PARTIDA where IDJ = '"+idj+"' order by Puntuacion desc limit 10";
+			rs = stat.executeQuery(sql);
+			nicks=rs.getString(1);
+			System.out.println(nicks);
+			rs.close();
+			stat.close();
+		
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			System.out.println("ERROR topTenJuegoNick: "+sql);
+			System.out.println("ERROR topTenJuegoNick: "+e.getMessage());
+		}
+		return nicks;
+	}
+	
+	public static int topTenJuegoPuntuacion(int idj){
+		Usuario u=null;
+		Statement stat = BaseDeDatos.getStatement();
+		System.out.println(stat);
+		ResultSet rs;
+		int scores=0;
+		String sql = null;
+		try {
+			sql = "select Nick from PARTIDA where IDJ = '"+idj+"' order by Puntuacion desc limit 10";
+			rs = stat.executeQuery(sql);
+			scores=rs.getInt(1);
+			System.out.println(scores);
+			rs.close();
+			stat.close();
+		
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			System.out.println("ERROR topTenJuegoNick: "+sql);
+			System.out.println("ERROR topTenJuegoNick: "+e.getMessage());
+		}
+		return scores;
+	}
+	//SELECT MAX(PUNTUACION) FROM PARTIDA WHERE NICK='A'
+	public static int JuegoMasUtilizado(String nick){
+		Usuario u=null;
+		Statement stat = BaseDeDatos.getStatement();
+		System.out.println(stat);
+		ResultSet rs;
+		int scores=0;
+		String sql = null;
+		try {
+			sql = "select max(PUNTUACION) from PARTIDA where nick = '"+nick+"'";
+			rs = stat.executeQuery(sql);
+			scores=rs.getInt(1);
+			System.out.println(scores);
+			rs.close();
+			stat.close();
+		
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			System.out.println("ERROR topTenJuegoNick: "+sql);
+			System.out.println("ERROR topTenJuegoNick: "+e.getMessage());
+		}
+		return scores;
+	}
+	/*SELECT  Puntuacion FROM PARTIDA
+	order by Puntuacion desc limit 10;*/
+	public static int topTenGeneralPuntuacion(){
+		Usuario u=null;
+		Statement stat = BaseDeDatos.getStatement();
+		System.out.println(stat);
+		ResultSet rs;
+		int score=0;
+		String sql = null;
+		try {
+			sql = "select Puntuacion from PARTIDA order by PUNTUACION desc limit 10";
+			rs = stat.executeQuery(sql);
+			score=rs.getInt(1);
+			System.out.println(score);
+			rs.close();
+			stat.close();
+		
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			System.out.println("ERROR topTenJuegoNick: "+sql);
+			System.out.println("ERROR topTenJuegoNick: "+e.getMessage());
+		}
+		return score;
+	}
+	
+	/*SELECT  Nick FROM PARTIDA
+	order by Puntuacion desc limit 10;*/
+	public static String topTenGeneralNick(){
+		Usuario u=null;
+		Statement stat = BaseDeDatos.getStatement();
+		System.out.println(stat);
+		ResultSet rs;
+		String nick=null;
+		String sql = null;
+		try {
+			sql = "select Nick from PARTIDA order by PUNTUACION desc limit 10";
+			rs = stat.executeQuery(sql);
+			nick=rs.getString(1);
+			System.out.println(nick);
+			rs.close();
+			stat.close();
+		
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			System.out.println("ERROR topTenJuegoNick: "+sql);
+			System.out.println("ERROR topTenJuegoNick: "+e.getMessage());
+		}
+		return nick;
+	}
 }

@@ -90,7 +90,9 @@ public class EstadiJugadorTetris {
 		JButton btnCompararGrafico = new JButton("Comparar");
 		btnCompararGrafico.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				ComparaRecordsTetris a= new ComparaRecordsTetris();
+				System.out.println(EntraORegistrate.usu);
+				System.out.println(EntraORegistrate.usu.getNick());
+				ComparaRecordsTetris a= new ComparaRecordsTetris(EntraORegistrate.usu.getNick(), textField.getText(), 1);
 				a.frame.setVisible(true);
 			}
 		});

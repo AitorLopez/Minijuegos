@@ -90,7 +90,7 @@ public class EstadiJugadorPepeFly {
 		JButton btnCompararGrafico = new JButton("Comparar");
 		btnCompararGrafico.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				ComparaRecordsPepeFly a= new ComparaRecordsPepeFly();
+				ComparaRecordsPepeFly a= new ComparaRecordsPepeFly(EntraORegistrate.usu.getNick(), textField.getText(), 3);
 				a.frame.setVisible(true);
 			}
 		});

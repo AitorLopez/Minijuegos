@@ -3,10 +3,41 @@ package clases;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.HashMap;
 
 
 
 public class UsuariosBD {
+	
+	/*SELECT NICK, MAX(PUNTUACION) FROM PARTIDA
+	WHERE IDj=1 AND (NICK IN ('A', 'AitorLo'))
+	group by nick;*/
+	public static HashMap<String, Integer> obtenerPuntuacionesEstadistica(int idj, String nick1, String nick2){
+		Statement stat = BaseDeDatos.getStatement();
+		System.out.println(stat);
+		ResultSet rs;
+		HashMap<String, Integer> datos= new HashMap<String, Integer>();
+		String sql ="select nick, max(puntuacion) from partida where idj ="+idj+" and (nick in('"+nick1+"','"+nick2+"')) group by nick";
+		try {
+			rs = stat.executeQuery(sql);
+			while(rs.next()){
+				String nick=rs.getString(1);
+				System.out.println(nick);
+				int puntos=rs.getInt(2);
+				datos.put(nick, new Integer(puntos));
+			}	
+			rs.close();
+			stat.close();
+		
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			System.out.println("ERROR obtenerPuntuacionesEstadistica: "+sql);
+			System.out.println("ERROR obtenerPuntuacionesEstadistica: "+e.getMessage());
+		}
+		return datos;
+	
+	}
+	
 	
 	public static Usuario buscarUsuariosBD(String nick, String contraseña){
 		Usuario u=null;

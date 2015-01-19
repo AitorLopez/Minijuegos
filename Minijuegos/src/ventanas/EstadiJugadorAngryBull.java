@@ -91,7 +91,7 @@ public class EstadiJugadorAngryBull {
 		JButton btnCompararGrafico = new JButton("Comparar");
 		btnCompararGrafico.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				ComparaRecordsAngryBull a= new ComparaRecordsAngryBull();
+				ComparaRecordsAngryBull a= new ComparaRecordsAngryBull(EntraORegistrate.usu.getNick(), textField.getText(), 2);
 				a.frame.setVisible(true);
 			}
 		});

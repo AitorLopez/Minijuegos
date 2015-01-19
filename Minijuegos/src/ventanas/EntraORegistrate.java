@@ -25,7 +25,7 @@ import clases.UsuariosBD;
 //clase principal
 public class EntraORegistrate extends JFrame{
 	
-  public static Usuario usu;
+	public static Usuario usu;
 	JFrame frame;
 	private JTextField textFieldNick;
 	private JTextField textFieldContraseña;
